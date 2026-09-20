@@ -100,3 +100,10 @@ At a high level:
     Data Storage
 
 */
+
+/*
+9. Schema
+A schema is the logical structure or blueprint of a database. It defines how data is 
+organized, including tables, columns, relationships, constraints, views, etc.
+
+*/

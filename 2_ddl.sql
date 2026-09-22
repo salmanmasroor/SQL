@@ -1,3 +1,5 @@
+--DDL
+
 --listdown existing databse
 SELECT datname FROM pg_database
 

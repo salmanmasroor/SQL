@@ -22,19 +22,25 @@ applied to a column.
 -UNIQUE
 -FOREIGN KEY
 */
+DROP TABLE employees;
 
 CREATE TABLE employees(
-	id SERIAL PRIMARY KEY,
+	emp_id INTEGER GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	fname VARCHAR(50) NOT NULL,
 	lname VARCHAR(50) NOT NULL,
-	email VARCHAR(100) UNIQUE,
-	dept CHAR(10) NOT NULL,
-	salary INTEGER NOT NULL DEFAULT 50000,
-	hire_date DATE NOT NULL 
+	email VARCHAR(100) NOT NULL UNIQUE,
+	dept CHAR(10) ,
+	salary DECIMAL(10,2) NOT NULL DEFAULT 30000.00,
+	hire_date DATE NOT NULL DEFAULT CURRENT_DATE
 );
 
 INSERT INTO employees(fname,lname,email,dept,salary,hire_date)
 VALUES
-('Hamza','Shahid','hamza@gmail.com','IT',120000,'2026-09-22');
+('Hamza','Shahid','hamza1@gmail.com','IT',120000,'2026-09-22');
+
+INSERT INTO employees(fname,lname,email,dept,salary)
+VALUES
+('Hamza','Shahid','hamza@gmail.com','IT',120000);
+
 
 SELECT * FROM employees;
